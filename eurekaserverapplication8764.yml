@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev #当前描述文件的名字
+server:
+  port: 8764
+eureka:
+  instance:
+    hostname: eurekaserver8764  #当前Eureka服务器实例名
+  client:
+    register-with-eureka: false #不把当前项目注册到Eureka
+    fetch-registry: false #不从Eureka服务器获取内容
+    service-url:
+      defaultZone: http://localhost:8764/eureka/  #Eureka的注册地址
